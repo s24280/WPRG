@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form method="post" action="">
+		First string: <input type="text" name="string1"><br>
+		Second string: <input type="text" name="string2"><br>
+		<input type="submit" value="Submit">
+	</form>
+	<?php
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$string1 = $_POST["string1"];
+		$string2 = $_POST["string2"];
+		echo "%$string2 $string1%$#";
+	}
+	?>
+</body>
+</html>
