@@ -1,0 +1,88 @@
+<?php
+echo "Podaj trzy liczby rzeczywiste oddzielone od siebie spacja: ";
+$input = rtrim(fgets(STDIN)); 
+$numbers = explode(" ", $input);
+
+if(count($numbers) != 3) {
+  echo "BŁĄD: Podaj trzy liczby rzeczywiste!\n";
+  exit();
+}
+
+$a = floatval($numbers[0]);
+$b = floatval($numbers[1]);
+$c = floatval($numbers[2]);
+
+$min = $a;
+if($b < $min) {
+  $min = $b;
+}
+if($c < $min) {
+  $min = $c;
+}
+
+$max = $a;
+if($b > $max) {
+  $max = $b;
+}
+if($c > $max) {
+  $max = $c;
+}
+
+echo "Liczby od najmniejszej do największej: ";
+if($min == $a) {
+  echo $a." ";
+  if($b < $c) {
+    echo $b." ".$c."\n";
+  }
+  else {
+    echo $c." ".$b."\n";
+  }
+}
+else if($min == $b) {
+  echo $b." ";
+  if($a < $c) {
+    echo $a." ".$c."\n";
+  }
+  else {
+    echo $c." ".$a."\n";
+  }
+}
+else {
+  echo $c." ";
+  if($a < $b) {
+    echo $a." ".$b."\n";
+  }
+  else {
+    echo $b." ".$a."\n";
+  }
+}
+
+echo "Liczby od najwiekszej do najmniejszej: ";
+if($max == $a) {
+  echo $a." ";
+  if($b > $c) {
+    echo $b." ".$c."\n";
+  }
+  else {
+    echo $c." ".$b."\n";
+  }
+}
+else if($max == $b) {
+  echo $b." ";
+  if($a > $c) {
+    echo $a." ".$c."\n";
+  }
+  else {
+    echo $c." ".$a."\n";
+  }
+}
+else {
+  echo $c." ";
+  if($a > $b) {
+    echo $a." ".$b."\n";
+  }
+  else {
+    echo $b." ".$a."\n";
+  }
+}
+?>
