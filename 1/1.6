@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form method="post" action="">
+		a: <input type="number" name="a"><br>
+		b: <input type="number" name="b"><br>
+		c: <input type="number" name="c"><br>
+		<input type="submit" value="Check">
+	</form>
+
+	<?php
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$a = $_POST["a"];
+		$b = $_POST["b"];
+		$c = $_POST["c"];
+
+		if ($a + $b > $c && $a + $c > $b && $b + $c > $a) {
+			echo "Mozna zbudowac trojkat";
+		} else {
+			echo "Nie mozna zbudowac trojkata";
+		}
+	}
+	?>
+</body>
+</html>
