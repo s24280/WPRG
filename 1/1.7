@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form method="post">
+		<label for="month">Enter month number:</label>
+		<input type="number" id="month" name="month" min="1" max="12" required>
+		<button type="submit">Submit</button>
+	</form>
+
+	<?php
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$month_num = $_POST["month"];
+
+		switch ($month_num) {
+			case 1:
+				echo "January has 31 days";
+				break;
+			case 2:
+				echo "February has 28 days";
+				break;
+			case 3:
+				echo "March has 31 days";
+				break;
+			case 4:
+				echo "April has 30 days";
+				break;
+			case 5:
+				echo "May has 31 days";
+				break;
+			case 6:
+				echo "June has 30 days";
+				break;
+			case 7:
+				echo "July has 31 days";
+				break;
+			case 8:
+				echo "August has 31 days";
+				break;
+			case 9:
+				echo "September has 30 days";
+				break;
+			case 10:
+				echo "October has 31 days";
+				break;
+			case 11:
+				echo "November has 30 days";
+				break;
+			case 12:
+				echo "December has 31 days";
+				break;
+			default:
+				echo "ERROR";
+		}
+	}
+	?>
+</body>
+</html>
