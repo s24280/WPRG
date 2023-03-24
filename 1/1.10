@@ -1,0 +1,27 @@
+<?php
+do {
+    $num = readline("Podaj liczbe naturalna: ");
+} while (!is_numeric($num) || $num <= 0 || !ctype_digit($num));
+
+for ($i = 1; $i <= $num; $i++) {
+    for ($j = 1; $j <= $i; $j++) {
+        echo "*";
+    }
+    echo "\n";
+}
+for ($i = $num; $i >= 1; $i--) {
+    for ($j = 1; $j <= $i; $j++) {
+        echo "*";
+    }
+    echo "\n";
+}
+for ($i = 1; $i <= $num; $i++) {
+    for ($j = 1; $j <= $i; $j++) {
+        echo " ";
+    }
+    for ($k = $i; $k <= $num; $k++) {
+        echo "*";
+    }
+    echo "\n";
+}
+?>
