@@ -1,0 +1,29 @@
+<?php
+if (isset($_POST['number'])) {
+    $number = $_POST['number'];
+    if (!is_numeric($number) || $number <= 0 || !is_int($number + 0)) {
+        echo "Given number is not a positive integer!";
+    } else {
+        $isPrime = true;
+        $iterations = 0;
+
+        if ($number <= 2) {
+            $isPrime = ($number == 2);
+            $iterations = 1;
+        } else {
+            for ($i = 2; $i <= sqrt($number); $i++) {
+                $iterations++;
+                if ($number % $i == 0) {
+                    $isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if ($isPrime) {
+            echo "$number is a prime number. $iterations iterations.";
+        } else {
+            echo "$number is not a prime number. $iterations iterations.";
+        }
+    }
+}
